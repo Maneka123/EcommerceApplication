@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 const router=new VueRouter({
     mode:'history',
     routes:[
-        {path:"",component:Home}.
+        {path:"",component:Home},
         {path:"/add",component:AddProduct},
         {path:"/about",component:About},
         {path:"/contact",component:Contact},
