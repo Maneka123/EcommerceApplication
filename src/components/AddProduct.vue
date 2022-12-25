@@ -15,9 +15,10 @@
         <input name="productName" 
         type="text" 
         class="form-control" 
-        id="exampleFormControlInput1" 
+        
         placeholder="Product Name"
         v-validate="'required'"
+        v-model="item.productName"
         
         autofocus>
         <div v-show="errors.has('productName')" class="help-block alert alert-danger">{{errors.first('productName')}}</div>
@@ -29,9 +30,10 @@
         name="productCatagory"
         type="text" 
         class="form-control" 
-        id="exampleFormControlInput1" 
+        
         placeholder="Product Catagory"
-        v-validate="'required'">
+        v-validate="'required'"
+        v-model="item.productCatagory">
         
         <div v-show="errors.has('productCatagory')" class="help-block alert alert-danger">{{errors.first('productCatagory')}}</div>
         </div>
@@ -42,9 +44,10 @@
         name="productQuantity"
         type="number" 
         class="form-control" 
-        id="exampleFormControlInput1" 
+        
         placeholder="Quantity"
-        v-validate="'required|max_value:5'">
+        v-validate="'required|max_value:5'"
+        v-model="item.productQuantity">
         <div v-show="errors.has('productQuantity')" class="help-block alert alert-danger">{{errors.first('productQuantity')}}</div>
         </div>
 
@@ -55,9 +58,10 @@
         <textarea 
         name="productDescription"
         class="form-control" 
-        id="exampleFormControlTextarea1" 
+        
         rows="3"
-        v-validate="'required'"></textarea>
+        v-validate="'required'"
+        v-model="item.productDescription"></textarea>
         <div v-show="errors.has('productDescription')" class="help-block alert alert-danger">{{errors.first('productDescription')}}</div>
         </div>
 
@@ -67,9 +71,10 @@
         name="unitPrice"
         type="number" 
         class="form-control" 
-        id="exampleFormControlInput1" 
+        
         placeholder="unit price"
-        v-validate="'required|max:10'">
+        v-validate="'required|max:10'"
+        v-model="item.unitPrice">
         <div v-show="errors.has('unitPrice')" class="help-block alert alert-danger">{{errors.first('unitPrice')}}</div>
         </div>
 
@@ -80,9 +85,34 @@
 
         <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-        <button type="Submit" class="btn btn-secondary">Add to the List</button>
+        <button 
+        type="Submit" 
+        class="btn btn-secondary"
+        v-show="item.productName && item.productCatagory && item.productQuantity && item.productDescription && item.unitPrice"
+        >Add to the List</button>
         </div></div>
 
     </div>
 </template>
-<script></script>
+<script>
+
+export default{
+    data(){
+        return{
+            item:{
+                productName:'',
+                productCatagory:'',
+                productQuantity:0,
+                productDescription:'',
+                unitPrice:0
+            }
+        }
+    }
+}
+
+
+
+
+
+
+</script>
