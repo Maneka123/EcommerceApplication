@@ -10,23 +10,23 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <router-link class="nav-link " to="/">Home</router-link>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link ">Add Product</a>
+          <router-link class="nav-link " to="/add">Add Product</router-link>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link ">Product Basket</a>
+          <router-link class="nav-link " to="/list">Product Basket</router-link>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link ">About</a>
+          <router-link class="nav-link " to="/about">About</router-link>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link ">Contact</a>
+          <router-link class="nav-link " to="/contact">Contact Us</router-link>
         </li>
       </ul>
       
